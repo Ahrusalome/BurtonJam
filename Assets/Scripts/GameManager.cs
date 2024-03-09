@@ -13,27 +13,11 @@ public enum PlayerState
 public class GameManager : MonoBehaviour
 {
     public static GameManager _manager;
+    public InspectItem inspectItem;
     public PlayerState state;
-    
+
     void Start()
     {
         GameManager._manager = this;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void StartInspecting()
-    {
-        state = PlayerState.inspect;
-        
-    }
-
-    public void StopInspeting()
-    {
-        state = PlayerState.move;
     }
 }
