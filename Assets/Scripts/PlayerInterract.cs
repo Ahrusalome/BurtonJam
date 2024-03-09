@@ -19,6 +19,8 @@ public class PlayerInterract : MonoBehaviour
 
     public void OnInterract(InputValue value)
     {
+        if (GameManager._manager.state == PlayerState.inspect) return;
+
         RaycastHit hit;
         if (Physics.Raycast(m_Camera.transform.position, m_Camera.transform.forward, out hit, 4f))
         {

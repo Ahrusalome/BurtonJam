@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1092,7 +1092,7 @@ Transform:
   m_GameObject: {fileID: 1721049671}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8, z: 0}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1517,6 +1517,70 @@ PrefabInstance:
     - target: {fileID: 7943459592168108680, guid: 9cdcaabf9197db24daf41074a3a43b0a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276240961199798674, guid: 9cdcaabf9197db24daf41074a3a43b0a, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276240961199798674, guid: 9cdcaabf9197db24daf41074a3a43b0a, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276240961199798674, guid: 9cdcaabf9197db24daf41074a3a43b0a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
+      value: f510b227-9bf8-42c4-b9b3-611142ec4757
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276240961199798674, guid: 9cdcaabf9197db24daf41074a3a43b0a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: 03fa079e-14ad-4727-a05a-52348fbd34ae
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276240961199798674, guid: 9cdcaabf9197db24daf41074a3a43b0a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: 4cd2515b-8b93-457a-8901-6d2dd542ba1f
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276240961199798674, guid: 9cdcaabf9197db24daf41074a3a43b0a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
+      value: 3c410f64-7776-4489-ba54-51adef5e1038
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276240961199798674, guid: 9cdcaabf9197db24daf41074a3a43b0a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: 660fa72a-27cb-4247-848e-b4467cdd481b
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276240961199798674, guid: 9cdcaabf9197db24daf41074a3a43b0a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
+      value: e4a29170-d9ee-4c08-ac33-31ada5ef4fad
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276240961199798674, guid: 9cdcaabf9197db24daf41074a3a43b0a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionId
+      value: 755b5577-a5ed-4f2e-8730-c840aa65c5e5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276240961199798674, guid: 9cdcaabf9197db24daf41074a3a43b0a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
+      value: Ground/Look[/Mouse/delta]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276240961199798674, guid: 9cdcaabf9197db24daf41074a3a43b0a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: Ground/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276240961199798674, guid: 9cdcaabf9197db24daf41074a3a43b0a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: Ground/Jump[/Keyboard/space]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276240961199798674, guid: 9cdcaabf9197db24daf41074a3a43b0a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
+      value: Ground/Interract[/Keyboard/e]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276240961199798674, guid: 9cdcaabf9197db24daf41074a3a43b0a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: UI/StopInspect[/Keyboard/f]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276240961199798674, guid: 9cdcaabf9197db24daf41074a3a43b0a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
+      value: UI/Inspect[/Mouse/delta]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276240961199798674, guid: 9cdcaabf9197db24daf41074a3a43b0a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionName
+      value: UI/StartInspect[/Mouse/leftButton]
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
