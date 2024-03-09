@@ -36,12 +36,4 @@ public class GameManager : MonoBehaviour
     {
         state = PlayerState.move;
     }
-
-    public void OnStopInspect(InputValue value)
-    {
-        if (state == PlayerState.inspect)
-        {
-            StopInspeting();
-        }
-    }
 }

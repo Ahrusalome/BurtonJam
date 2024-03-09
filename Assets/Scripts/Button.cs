@@ -15,11 +15,5 @@ public class Button : MonoBehaviour, IInteractable
     public void Interract()
     {
         GameManager._manager.StartInspecting();
-        //onInterract.Invoke();
-    }
-
-    public void test(string _test)
-    {
-        //Debug.Log(_test);
     }
 }

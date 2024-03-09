@@ -11,12 +11,6 @@ public class PlayerInterract : MonoBehaviour
         m_Camera = Camera.main;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
@@ -30,7 +24,6 @@ public class PlayerInterract : MonoBehaviour
         {
             if (hit.collider.gameObject.GetComponent<IInteractable>() != null)
             {
-                Debug.Log("test");
                 hit.transform.GetComponent<IInteractable>().Interract();
             }
         }
