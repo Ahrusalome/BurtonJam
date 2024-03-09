@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
         return angle;
     }
 
-    private void HandleHeadBob()
+    public void HandleHeadBob()
     {
         if (!groundedPlayer) return;
         if (moveInput == Vector3.zero)
