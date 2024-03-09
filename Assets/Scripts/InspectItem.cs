@@ -15,8 +15,9 @@ public class InspectItem : MonoBehaviour
     private bool isInspect;
     private float zoomLevel = 3;
 
-    public void StartInspecting(GameObject inspectObject, bool _canRotate = true)
+    public void StartInspecting(GameObject inspectObject, Vector3 scale, bool _canRotate = true)
     {
+        
         Cursor.lockState = CursorLockMode.None;
         canRotate = _canRotate;
         GameManager._manager.state = PlayerState.inspect;
