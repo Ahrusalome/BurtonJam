@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (GameManager._manager.state != PlayerState.move) return;
+
         RaycastHit hit;
         Vector3 movement;
 
@@ -79,10 +81,6 @@ public class PlayerController : MonoBehaviour
         return angle;
     }
 
-    public void OnMove(InputValue value) => moveInput = value.Get<Vector2>();
-    //public void OnJump(InputValue value) => Jump();
-    public void OnLook(InputValue value) => lookInput = value.Get<Vector2>();
-
     private void HandleHeadBob()
     {
         if (!groundedPlayer) return;
@@ -94,4 +92,8 @@ public class PlayerController : MonoBehaviour
         headBobTimer += Time.deltaTime * headBobSpeed;
         cameraPivot.localPosition += new Vector3(0, Mathf.Sin(headBobTimer) * headBobDistance, 0);
     }
+
+    public void OnMove(InputValue value) => moveInput = value.Get<Vector2>();
+    //public void OnJump(InputValue value) => Jump();
+    public void OnLook(InputValue value) => lookInput = value.Get<Vector2>();
 }

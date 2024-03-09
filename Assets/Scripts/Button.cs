@@ -14,12 +14,6 @@ public class Button : MonoBehaviour, IInteractable
     }
     public void Interract()
     {
-        transform.position = Camera.main.transform.position + (Camera.main.transform.forward * 2);
-        //onInterract.Invoke();
-    }
-
-    public void test(string _test)
-    {
-        //Debug.Log(_test);
+        GameManager._manager.StartInspecting();
     }
 }
