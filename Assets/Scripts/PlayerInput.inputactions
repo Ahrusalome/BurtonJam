@@ -132,6 +132,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "UI",
+            "id": "b1d900b1-3a40-453f-a1b1-e892f8379a70",
+            "actions": [
+                {
+                    "name": "StopInspect",
+                    "type": "Button",
+                    "id": "660fa72a-27cb-4247-848e-b4467cdd481b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "99703145-2a26-4741-99ec-015dd5a03b3e",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StopInspect",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
