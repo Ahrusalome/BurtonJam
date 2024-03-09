@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -38,6 +35,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (GameManager._manager.state != PlayerState.move) return;
+
         RaycastHit hit;
         Vector3 movement;
 
@@ -72,21 +71,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnDoorInteract()
-    {
-        Debug.Log("oui");
-        RaycastHit hit;
-        Debug.DrawRay(playerCamera.position, playerCamera.forward, Color.cyan, 3);
-        if (Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, 15f))
-        {
-            Debug.Log(hit.collider.gameObject.name);
-            if (hit.collider.TryGetComponent<Door>(out Door door))
-            {
-                door.Open(transform.position);
-            }
-        }
-    }
-
     private float OnSlope()
     {
         RaycastHit hit;
@@ -94,10 +78,6 @@ public class PlayerController : MonoBehaviour
         float angle = Vector3.Angle(transform.up, hit.normal);
         return angle;
     }
-
-    public void OnMove(InputValue value) => moveInput = value.Get<Vector2>();
-    //public void OnJump(InputValue value) => Jump();
-    public void OnLook(InputValue value) => lookInput = value.Get<Vector2>();
 
     private void HandleHeadBob()
     {
@@ -110,4 +90,8 @@ public class PlayerController : MonoBehaviour
         headBobTimer += Time.deltaTime * headBobSpeed;
         cameraPivot.localPosition += new Vector3(0, Mathf.Sin(headBobTimer) * headBobDistance, 0);
     }
+
+    public void OnMove(InputValue value) => moveInput = value.Get<Vector2>();
+    //public void OnJump(InputValue value) => Jump();
+    public void OnLook(InputValue value) => lookInput = value.Get<Vector2>();
 }
