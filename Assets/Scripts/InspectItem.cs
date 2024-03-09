@@ -17,14 +17,15 @@ public class InspectItem : MonoBehaviour
         GameManager._manager.state = PlayerState.inspect;
         inspectCam.SetActive(true);
         mainCam.SetActive(false);
-        _currentInspectObject = inspectObject;
-        Instantiate(_currentInspectObject, inspectCam.transform.position + (transform.forward * 3), Quaternion.identity);
+        _currentInspectObject = Instantiate(inspectObject, inspectCam.transform.position + (transform.forward * 3), Quaternion.identity);
     }
 
-    public void Update() {
+    public void Update() 
+    {
         if (GameManager._manager.state == PlayerState.inspect)
         {
-            
+            _currentInspectObject.transform.Rotate(Vector3.up, inspectDirection.x * Time.deltaTime * 50);
+            _currentInspectObject.transform.Rotate(Vector3.right, inspectDirection.y * Time.deltaTime * 50);
         }
     }
 
