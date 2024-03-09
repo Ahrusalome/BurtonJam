@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,12 @@ public class InspectItem : MonoBehaviour
     private bool canRotate;
     private bool isInspect;
     private float zoomLevel = 3;
+
+    public void Start()
+    {
+        inspectCam.SetActive(false);
+        mainCam.SetActive(true);
+    }
 
     public void StartInspecting(GameObject inspectObject, bool _canRotate = true)
     {
