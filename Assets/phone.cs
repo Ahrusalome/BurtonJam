@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class phone : MonoBehaviour
 {
     private int hits;
-    private int code;
-    [SerializeField] private int password;
+    private string code;
+    [SerializeField] private string password;
+    [SerializeField] private TMP_Text passwordDidplay;
     // Start is called before the first frame update
     void Start()
     {
-        hits = 0;   
+        hits = 0;
+        Debug.Log($"start");
     }
 
     // Update is called once per frame
@@ -19,18 +22,28 @@ public class phone : MonoBehaviour
         
     }
 
-    public void hitButton(int number)
+    private void UpdatePassword()
     {
-        Debug.Log($"hit {number}");
-        if (hits < 4)
+        passwordDidplay.text = new string('●', code.Length);
+    }
+
+    public void hitButton(string letter)
+    {
+        code+=letter;
+        UpdatePassword();
+    }
+
+    public void delete()
+    {
+        code = code.Remove(code.Length-1);
+        UpdatePassword();
+    }
+
+    public void done()
+    {
+        if (code == password) 
         {
-            code *=10;
-            code += number;
-        } else {
-            if (code == password)
-            {
-                Debug.Log($"Unlock !!");
-            }
+            Debug.Log($"Unlock");
         }
     }
 }
