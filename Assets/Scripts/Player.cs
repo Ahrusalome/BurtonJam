@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -68,6 +69,21 @@ public class PlayerController : MonoBehaviour
         if (groundedPlayer && OnSlope() < 45)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+        }
+    }
+
+    public void OnDoorInteract()
+    {
+        Debug.Log("oui");
+        RaycastHit hit;
+        Debug.DrawRay(playerCamera.position, playerCamera.forward, Color.cyan, 3);
+        if (Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, 15f))
+        {
+            Debug.Log(hit.collider.gameObject.name);
+            if (hit.collider.TryGetComponent<Door>(out Door door))
+            {
+                door.Open(transform.position);
+            }
         }
     }
 
