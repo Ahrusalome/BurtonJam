@@ -242,6 +242,54 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "QTE",
+            "id": "60a22aca-5c8c-4a41-bec7-6c697c75515e",
+            "actions": [
+                {
+                    "name": "Left",
+                    "type": "Button",
+                    "id": "64da5477-773b-4876-ac5c-1c3ecbaae9b6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Right",
+                    "type": "Button",
+                    "id": "b972044c-7fd5-40f5-9eff-e0e009effcc1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6ccf48fa-a758-4252-aeb3-60b60c669c03",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d9f1af79-7b70-4cb1-8cd4-0e3949639030",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
