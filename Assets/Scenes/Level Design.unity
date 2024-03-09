@@ -1198,7 +1198,7 @@ Transform:
   m_GameObject: {fileID: 507521362}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 156.79, y: 17.049, z: 30.96}
+  m_LocalPosition: {x: 156.79, y: 17.258, z: 30.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1738,7 +1738,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8020596794417616945, guid: dcfadf4000085c142a8ef81c8aa0b4c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.549
+      value: 16.758
       objectReference: {fileID: 0}
     - target: {fileID: 8020596794417616945, guid: dcfadf4000085c142a8ef81c8aa0b4c1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1775,7 +1775,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2181569734394067371, guid: dcfadf4000085c142a8ef81c8aa0b4c1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2110385013}
   m_SourcePrefab: {fileID: 100100000, guid: dcfadf4000085c142a8ef81c8aa0b4c1, type: 3}
 --- !u!1 &615626068
 GameObject:
@@ -3116,7 +3119,7 @@ Transform:
   m_GameObject: {fileID: 889914433}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 156.79, y: 17.049, z: 30.96}
+  m_LocalPosition: {x: 156.79, y: 17.258, z: 30.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4597,6 +4600,74 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226666286}
   m_Mesh: {fileID: -2774623519504801112, guid: 2d3f8ef6423ed5c4494af8fc61e98f7c, type: 3}
+--- !u!1 &1230974854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1230974855}
+  - component: {fileID: 1230974856}
+  - component: {fileID: 1230974857}
+  m_Layer: 0
+  m_Name: Spider Stop Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1230974855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230974854}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 170, y: 0, z: -13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1718221070}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1230974856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230974854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 419982fd4c8b14b49abe0f6774700ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepBackSpeed: 0
+  stepBackFinishPoint: {fileID: 1913811185}
+--- !u!65 &1230974857
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230974854}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1254860374
 GameObject:
   m_ObjectHideFlags: 0
@@ -5990,6 +6061,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677931478}
   m_Mesh: {fileID: -2774623519504801112, guid: 2d3f8ef6423ed5c4494af8fc61e98f7c, type: 3}
+--- !u!1 &1718221069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1718221070}
+  m_Layer: 0
+  m_Name: Kitchen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1718221070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718221069}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.188799, y: 15.599998, z: 48.0587}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1230974855}
+  - {fileID: 1913811185}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1761427046
 GameObject:
   m_ObjectHideFlags: 0
@@ -6366,6 +6470,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894432324}
   m_Mesh: {fileID: -7377852089462700772, guid: 3efeb3d763f1869498ad226e9c20b72f, type: 3}
+--- !u!1 &1913811184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1913811185}
+  m_Layer: 0
+  m_Name: Spider Step Back Stop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1913811185
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913811184}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 170, y: 0, z: -15.04}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1718221070}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1925578685
 GameObject:
   m_ObjectHideFlags: 0
@@ -7493,6 +7628,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107968782}
   m_Mesh: {fileID: -7377852089462700772, guid: 3efeb3d763f1869498ad226e9c20b72f, type: 3}
+--- !u!1 &2110385009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2181569734394067371, guid: dcfadf4000085c142a8ef81c8aa0b4c1, type: 3}
+  m_PrefabInstance: {fileID: 604694291}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2110385013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110385009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824af43c4ff02ae43b3a8a631d97a545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Camera: {fileID: 507521364}
 --- !u!1 &2120116087
 GameObject:
   m_ObjectHideFlags: 0
@@ -7556,3 +7709,4 @@ SceneRoots:
   - {fileID: 1033203269}
   - {fileID: 432501590}
   - {fileID: 1376366777}
+  - {fileID: 1718221070}
