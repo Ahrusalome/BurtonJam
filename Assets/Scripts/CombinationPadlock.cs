@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using Cinemachine;
 
 public class CombinationPadlock : MonoBehaviour, IInteractable
 {
-    public GameObject mainCam;
-    public GameObject padlockCamera;
+    public CinemachineVirtualCamera padlockCamera;
     [SerializeField] private int[] code;
     private int[] currentCode = new int[4];
     [SerializeField] private GameObject UI;
@@ -47,16 +47,14 @@ public class CombinationPadlock : MonoBehaviour, IInteractable
     public void Interract()
     {
         UI.SetActive(true);
-        mainCam.SetActive(false);
-        padlockCamera.SetActive(true);
+        padlockCamera.Priority = 12;
         Cursor.lockState = CursorLockMode.None;
     }
 
     public void Close()
     {
         UI.SetActive(false);
-        mainCam.SetActive(true);
-        padlockCamera.SetActive(false);
+        padlockCamera.Priority = 10;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -64,12 +62,7 @@ public class CombinationPadlock : MonoBehaviour, IInteractable
     {
         for (int i = 0; i < currentCode.Length; i++)
         {
-            Debug.Log(currentCode[i] == code[i]);
-            if (currentCode[i] != code[i])
-            {
-                // If any element doesn't match, return false
-                return;
-            }
+            if (currentCode[i] != code[i]) return;
         }
         Close();
         CodeIsCorrect.Invoke();

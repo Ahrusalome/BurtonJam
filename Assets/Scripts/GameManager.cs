@@ -18,6 +18,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        GameManager._manager = this;
+        _manager = this;
     }
 }

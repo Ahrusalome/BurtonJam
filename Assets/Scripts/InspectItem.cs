@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,7 @@ using UnityEngine.InputSystem;
 
 public class InspectItem : MonoBehaviour
 {
-    public GameObject inspectCam;
-    public GameObject mainCam;
+    public CinemachineVirtualCamera inspectCam;
     
     private GameObject _currentInspectObject;
 
@@ -17,12 +17,10 @@ public class InspectItem : MonoBehaviour
 
     public void StartInspecting(GameObject inspectObject, Vector3 scale, bool _canRotate = true)
     {
-        
         Cursor.lockState = CursorLockMode.None;
         canRotate = _canRotate;
         GameManager._manager.state = PlayerState.inspect;
-        inspectCam.SetActive(true);
-        mainCam.SetActive(false);
+        inspectCam.Priority = 12;
         _currentInspectObject = Instantiate(inspectObject, inspectCam.transform.position + (transform.forward * 3), Quaternion.identity);
     }
 
@@ -32,7 +30,7 @@ public class InspectItem : MonoBehaviour
         if (canRotate && isInspect)
         {
             Cursor.lockState = CursorLockMode.Locked;
-            _currentInspectObject.transform.Rotate(Vector3.up, inspectDirection.x * Time.deltaTime * 50);
+            _currentInspectObject.transform.Rotate(Vector3.up, -inspectDirection.x * Time.deltaTime * 50);
             _currentInspectObject.transform.Rotate(Vector3.right, inspectDirection.y * Time.deltaTime * 50);
         }
         else Cursor.lockState = CursorLockMode.None;
@@ -43,8 +41,7 @@ public class InspectItem : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         GameManager._manager.state = PlayerState.move;
-        inspectCam.SetActive(false);
-        mainCam.SetActive(true);
+        inspectCam.Priority = 10;
         Destroy(_currentInspectObject);
         _currentInspectObject = null;
     }

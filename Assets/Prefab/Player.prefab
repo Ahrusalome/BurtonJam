@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824af43c4ff02ae43b3a8a631d97a545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactText: {fileID: 0}
   m_Camera: {fileID: 0}
 --- !u!114 &4756362585064885903
 MonoBehaviour:
@@ -120,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraPivot: {fileID: 4858742420209196267}
   headBobSpeed: 13
-  headBobDistance: 0.002
+  headBobDistance: 0.001
   playerSpeed: 10
   jumpHeight: 1
   gravityValue: -19.62
@@ -151,7 +152,35 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f510b227-9bf8-42c4-b9b3-611142ec4757
+    m_ActionName: Ground/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 03fa079e-14ad-4727-a05a-52348fbd34ae
+    m_ActionName: Ground/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4cd2515b-8b93-457a-8901-6d2dd542ba1f
+    m_ActionName: Ground/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3c410f64-7776-4489-ba54-51adef5e1038
+    m_ActionName: Ground/Interract[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 660fa72a-27cb-4247-848e-b4467cdd481b
+    m_ActionName: UI/StopInspect[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e4a29170-d9ee-4c08-ac33-31ada5ef4fad
+    m_ActionName: UI/Inspect[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 755b5577-a5ed-4f2e-8730-c840aa65c5e5
+    m_ActionName: UI/StartInspect[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Ground
