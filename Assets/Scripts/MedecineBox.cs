@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace DefaultNamespace
 {
-    public class MedecineBox : MonoBehaviour, IInteractable
+    public class MedecineBox : MonoBehaviour
     {
         public bool IsOpen = false;
         [SerializeField] private float Speed = 1f;
@@ -18,18 +18,15 @@ namespace DefaultNamespace
         private Vector3 Forward;
 
         private Coroutine AnimationCoroutine;
-
-        public void Interract()
-        {
-            Open(PlayerTransform.position);
-        }
+        
         private void Awake()
         {
             StartRotation = transform.rotation.eulerAngles;
-            // Since "Forward" actually is pointing into the door frame, choose a direction to think about as "forward" 
             Forward = transform.right;
         }
-        public void Open(Vector3 UserPosition)
+        
+        
+        public void Open()
         {
             if (IsOpen)
                 return;
@@ -37,24 +34,17 @@ namespace DefaultNamespace
             {
                 StopCoroutine(AnimationCoroutine);
             }
-
-            float dot = Vector3.Dot(Forward, (UserPosition - transform.position).normalized);
-            AnimationCoroutine = StartCoroutine(DoRotationOpen(dot));
+            
+            AnimationCoroutine = StartCoroutine(DoRotationOpen());
         }
 
-        private IEnumerator DoRotationOpen(float ForwardAmount)
+        private IEnumerator DoRotationOpen()
         {
             Quaternion startRotation = transform.rotation;
             Quaternion endRotation;
 
-            if (ForwardAmount >= ForwardDirection)
-            {
-                endRotation = Quaternion.Euler(new Vector3(StartRotation.x + RotationAmount, 0, 0));
-            }
-            else
-            {
-                endRotation = Quaternion.Euler(new Vector3(StartRotation.x - RotationAmount, 0, 0));
-            }
+
+            endRotation = Quaternion.Euler(new Vector3(StartRotation.x - RotationAmount, 0, 0));
 
             IsOpen = true;
 
