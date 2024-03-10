@@ -53,6 +53,7 @@ public class CombinationPadlock : MonoBehaviour, IInteractable
         UI.SetActive(true);
         padlockCamera.Priority = 12;
         Cursor.lockState = CursorLockMode.None;
+        GetComponent<BoxCollider>().enabled = false;
     }
 
     public void Close()
@@ -60,6 +61,7 @@ public class CombinationPadlock : MonoBehaviour, IInteractable
         UI.SetActive(false);
         padlockCamera.Priority = 10;
         Cursor.lockState = CursorLockMode.Locked;
+        GetComponent<BoxCollider>().enabled = true;
     }
 
     public void Check()
