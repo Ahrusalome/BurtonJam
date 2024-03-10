@@ -7,6 +7,7 @@ public class Button : MonoBehaviour, IInteractable
 {
     public void Interract()
     {
+        Debug.Log("oui");
         GameManager._manager.inspectItem.StartInspecting(this.gameObject);
     }
 }
