@@ -31,6 +31,8 @@ namespace DefaultNamespace
         }
         public void Open(Vector3 UserPosition)
         {
+            if (IsOpen)
+                return;
             if (AnimationCoroutine != null)
             {
                 StopCoroutine(AnimationCoroutine);
