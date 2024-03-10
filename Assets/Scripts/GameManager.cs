@@ -13,11 +13,13 @@ public enum PlayerState
 public class GameManager : MonoBehaviour
 {
     public static GameManager _manager;
+    public bool spiderIsBig;
     public InspectItem inspectItem;
     public PlayerState state;
 
     void Start()
     {
         _manager = this;
+        spiderIsBig = true;
     }
 }

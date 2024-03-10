@@ -7,6 +7,6 @@ public class Button : MonoBehaviour, IInteractable
 {
     public void Interract()
     {
-        GameManager._manager.inspectItem.StartInspecting(gameObject, Vector3.one);
+        GameManager._manager.inspectItem.StartInspecting(this.gameObject);
     }
 }

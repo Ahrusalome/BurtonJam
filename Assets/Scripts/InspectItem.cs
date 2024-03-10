@@ -1,4 +1,5 @@
 using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,8 +15,8 @@ public class InspectItem : MonoBehaviour
     private bool canRotate;
     private bool isInspect;
     private float zoomLevel = 3;
-
-    public void StartInspecting(GameObject inspectObject, Vector3 scale, bool _canRotate = true)
+    
+    public void StartInspecting(GameObject inspectObject, bool _canRotate = true)
     {
         Cursor.lockState = CursorLockMode.None;
         canRotate = _canRotate;

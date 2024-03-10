@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -81,7 +79,7 @@ public class PlayerController : MonoBehaviour
         return angle;
     }
 
-    private void HandleHeadBob()
+    public void HandleHeadBob()
     {
         if (!groundedPlayer) return;
         if (moveInput == Vector3.zero)
