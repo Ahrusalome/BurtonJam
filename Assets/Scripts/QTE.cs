@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,6 +8,8 @@ using UnityEngine.UI;
 
 public class QTE : MonoBehaviour
 {
+    public CinemachineVirtualCamera qteCam;
+    public GameObject monster;
     private bool enable = false;
     private int goal;
     private bool clickedLeft = false;
@@ -46,6 +49,12 @@ public class QTE : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
     }
 
+    private IEnumerator DespawnMonster()
+    {
+        yield return new WaitForSeconds(2f);
+        Destroy(monster);
+    }
+
     void LaunchQTE(int goal)
     {
         this.goal = goal;
@@ -62,6 +71,8 @@ public class QTE : MonoBehaviour
         qteCanvas.enabled = false;
         playerInput.SwitchCurrentActionMap("Ground");
         // Start animation
+        qteCam.Priority = 10;
+        StartCoroutine(DespawnMonster());
     }
 
     public void OnLeft()
