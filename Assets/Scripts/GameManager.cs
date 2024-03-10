@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager _manager;
     public bool spiderIsBig;
+    public GameObject pickedUpObj;
     public InspectItem inspectItem;
     public PlayerState state;
 
