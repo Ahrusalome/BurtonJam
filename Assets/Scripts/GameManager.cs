@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        _manager = this;
         spiderIsBig = true;
-        GameManager._manager = this;
     }
 }
