@@ -31,7 +31,6 @@ public class PortalTeleporter : MonoBehaviour {
                 characterController.enabled = false;
                 player.position = reciever.position + positionOffset;
                 characterController.enabled = true;
-                Debug.Log(player.position);
                 playerIsOverlapping = false;
             }
         }
