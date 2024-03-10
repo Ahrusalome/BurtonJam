@@ -19,7 +19,7 @@ public class SpiderStopper : MonoBehaviour
         for (float elapsedTime = 0; elapsedTime <= 1; elapsedTime += Time.unscaledDeltaTime)
         {
             playerController.HandleHeadBob();
-            yield return playerTransform.position = new Vector3(transform.position.x, 16.7f, Mathf.Lerp(transform.position.z, stepBackFinishPoint.position.z, elapsedTime*stepBackSpeed));
+            yield return playerTransform.position = new Vector3(transform.position.x, 16.9f, Mathf.Lerp(transform.position.z, stepBackFinishPoint.position.z, elapsedTime*stepBackSpeed));
         }
     }
 }

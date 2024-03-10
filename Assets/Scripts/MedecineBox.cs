@@ -11,18 +11,13 @@ namespace DefaultNamespace
         [Header("Rotation Configs")] [SerializeField]
         private float RotationAmount = 90f;
 
-        [SerializeField] private float ForwardDirection = 0;
-        [SerializeField] private Transform PlayerTransform;
-
         private Vector3 StartRotation;
-        private Vector3 Forward;
 
         private Coroutine AnimationCoroutine;
         
         private void Awake()
         {
             StartRotation = transform.rotation.eulerAngles;
-            Forward = transform.right;
         }
         
         
@@ -44,7 +39,7 @@ namespace DefaultNamespace
             Quaternion endRotation;
 
 
-            endRotation = Quaternion.Euler(new Vector3(StartRotation.x - RotationAmount, 0, 0));
+            endRotation = Quaternion.Euler(new Vector3(StartRotation.x - RotationAmount, -90, 0));
 
             IsOpen = true;
 
