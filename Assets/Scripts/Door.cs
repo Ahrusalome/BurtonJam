@@ -20,36 +20,24 @@ public class Door : MonoBehaviour, IInteractable
     private void Awake()
     {
         StartRotation = transform.rotation.eulerAngles;
-        // Since "Forward" actually is pointing into the door frame, choose a direction to think about as "forward" 
         Forward = transform.right;
     }
 
     public void Interract()
     {
-        Open(PlayerTransform.position);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.TryGetComponent<PlayerController>(out PlayerController controller))
-        {
-            if (!IsOpen)
-            {
-                Open(other.transform.position);
-            }
-        }
+        if (IsOpen)
+            Close();
+        else
+            Open(PlayerTransform.position);
     }
     public void Open(Vector3 UserPosition)
     {
-        if (IsOpen)
-            return;
         if (AnimationCoroutine != null)
         {
             StopCoroutine(AnimationCoroutine);
         }
 
         float dot = Vector3.Dot(Forward, (UserPosition - transform.position).normalized);
-        Debug.Log($"Dot: {dot.ToString("N3")}");
         AnimationCoroutine = StartCoroutine(DoRotationOpen(dot));
     }
 
@@ -80,8 +68,6 @@ public class Door : MonoBehaviour, IInteractable
 
     public void Close()
     {
-        if (!IsOpen)
-            return;
         if (AnimationCoroutine != null)
         {
             StopCoroutine(AnimationCoroutine);
