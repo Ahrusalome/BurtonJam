@@ -20,7 +20,6 @@ public class Door : MonoBehaviour, IInteractable
     private void Awake()
     {
         StartRotation = transform.rotation.eulerAngles;
-        // Since "Forward" actually is pointing into the door frame, choose a direction to think about as "forward" 
         Forward = transform.right;
     }
 
