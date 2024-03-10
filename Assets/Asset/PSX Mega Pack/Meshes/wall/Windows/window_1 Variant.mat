@@ -31,7 +31,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: aa3a867d21ea7df4495972c1239d25cd, type: 3}
+        m_Texture: {fileID: 2800000, guid: 579176fb65d22e940afe08894ffad825, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -40,5 +40,6 @@ Material:
     - _GlossyReflections: 1
     - _Mode: 3
     - _ZWrite: 0
-    m_Colors: []
+    m_Colors:
+    - _Color: {r: 0.4495051, g: 0.5541218, b: 0.7660377, a: 1}
   m_BuildTextureStacks: []
