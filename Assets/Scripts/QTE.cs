@@ -16,7 +16,9 @@ public class QTE : MonoBehaviour
         set {_currentPoints = value<0 ? 0 : value;}
     }
     private PlayerInput playerInput;
-    [SerializeField] private Slider progressionBar; 
+    [SerializeField] private Slider progressionBar;
+
+    [SerializeField] private Canvas qteCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,7 +59,7 @@ public class QTE : MonoBehaviour
     private void EndQTE()
     {
         this.enable = false;
-        progressionBar.gameObject.SetActive(false);
+        qteCanvas.enabled = false;
         playerInput.SwitchCurrentActionMap("Ground");
         // Start animation
     }
