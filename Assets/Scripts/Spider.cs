@@ -12,35 +12,32 @@ public class Spider : MonoBehaviour
     public float changeMultiplier = 2f;
     public float timeMultiplier = 0.5f;
 
+    [SerializeField] private float changeSpeed;
+    private Vector3 scale;
     /*--------------------------------------------------
     |                    METHODS                       |
     --------------------------------------------------*/
-    void Start() {
-        StartCoroutine(ChangeScale(transform.localScale));
+    void Start()
+    {
+        scale = transform.localScale;
+        StartCoroutine(ChangeScale());
     }
 
-    IEnumerator ChangeScale(Vector3 scale) {
-        for(;;)
+    public IEnumerator ChangeScale() {
+        for(float elapsedTime = 0; elapsedTime <= 1; elapsedTime += Time.unscaledDeltaTime*changeSpeed)
         {
             if (changeMultiplier < 1f) {
-                if (transform.localScale.x > scale.x * changeMultiplier) {
-                    float newScale = Mathf.Lerp(scale.x, scale.x * changeMultiplier, _time);
-                    _time += timeMultiplier * Time.deltaTime;
-                    transform.localScale = new Vector3(newScale, newScale, newScale);
-                } else {
+                if (transform.localScale.x < scale.x * changeMultiplier)
                     break;
-                }
+                float newScale = Mathf.Lerp(transform.localScale.x, scale.x * changeMultiplier, elapsedTime);
+                yield return transform.localScale = new Vector3(newScale, newScale, newScale);
+                
             } else {
-                if (transform.localScale.x < scale.x * changeMultiplier) {
-                    float newScale = Mathf.Lerp(scale.x, scale.x * changeMultiplier, _time);
-                    _time += timeMultiplier * Time.deltaTime;
-                    transform.localScale = new Vector3(newScale, newScale, newScale);
-                } else {
+                if (transform.localScale.x > scale.x * changeMultiplier)
                     break;
-                }
+                float newScale = Mathf.Lerp(transform.localScale.x, scale.x * changeMultiplier, elapsedTime);
+                yield return transform.localScale = new Vector3(newScale, newScale, newScale);
             }
-            
-            yield return null;
         }
     }
 }
