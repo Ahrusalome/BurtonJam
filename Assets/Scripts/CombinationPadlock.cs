@@ -27,6 +27,8 @@ public class CombinationPadlock : MonoBehaviour, IInteractable
     }
     public void IncrementDigit(int index)
     {
+        if (currentCode[index] == 9)
+            return;
         currentCode[index] += 1;
         UpdateInputField(index);
         Check();
@@ -34,6 +36,8 @@ public class CombinationPadlock : MonoBehaviour, IInteractable
 
     public void DecrementDigit(int index)
     {
+        if (currentCode[index] == 0)
+            return;
         currentCode[index] -= 1;
         UpdateInputField(index);
         Check();
