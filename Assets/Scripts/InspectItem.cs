@@ -23,6 +23,8 @@ public class InspectItem : MonoBehaviour
         GameManager._manager.state = PlayerState.inspect;
         inspectCam.Priority = 12;
         _currentInspectObject = Instantiate(inspectObject, inspectCam.transform.position + (transform.forward * 3), Quaternion.identity);
+        _currentInspectObject.transform.localScale = new Vector3(0.1f, 0.1f,0.1f);
+        _currentInspectObject.transform.eulerAngles = new Vector3(90,0,180);
     }
 
     public void Update() 
