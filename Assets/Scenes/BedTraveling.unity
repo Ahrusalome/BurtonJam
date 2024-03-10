@@ -7263,7 +7263,7 @@ PrefabInstance:
       objectReference: {fileID: 611515006}
     - target: {fileID: 4756362585064885903, guid: dcfadf4000085c142a8ef81c8aa0b4c1, type: 3}
       propertyPath: playerSpeed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4858742420209196267, guid: dcfadf4000085c142a8ef81c8aa0b4c1, type: 3}
       propertyPath: m_LocalPosition.y
