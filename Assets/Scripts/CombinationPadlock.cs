@@ -27,18 +27,18 @@ public class CombinationPadlock : MonoBehaviour, IInteractable
     }
     public void IncrementDigit(int index)
     {
-        if (currentCode[index] == 9)
-            return;
-        currentCode[index] += 1;
+        //if (currentCode[index] == 9)
+        //    return;
+        currentCode[index] = Wrap(currentCode[index] + 1, 0, 9);
         UpdateInputField(index);
         Check();
     }
 
     public void DecrementDigit(int index)
     {
-        if (currentCode[index] == 0)
-            return;
-        currentCode[index] -= 1;
+        //if (currentCode[index] == 0)
+        //    return;
+        currentCode[index] = Wrap(currentCode[index] - 1, 0, 9);
         UpdateInputField(index);
         Check();
     }
@@ -70,5 +70,12 @@ public class CombinationPadlock : MonoBehaviour, IInteractable
         }
         Close();
         CodeIsCorrect.Invoke();
+    }
+
+    private int Wrap(int _initialValue, int _min, int _max)
+    {
+        if ((_initialValue) > _max) return _min;
+        if ((_initialValue) < _min) return _max;
+        return _initialValue;
     }
 }
